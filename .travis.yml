@@ -5,8 +5,8 @@ dotnet: 2.0.0
 script:
  - dotnet restore
  - dotnet build
- - dotnet test Traning.Tests/Training.Tests.csproj
-notification:
+ - dotnet test Training.Tests/Training.Tests.csproj
+notifications:
   email:
    recipients:
     - bundit@mycostech.com
