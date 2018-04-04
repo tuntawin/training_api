@@ -18,33 +18,6 @@ namespace Training.Tests.Utils
 {
     public class TestStartup
     {
-        //public TestStartup(IConfiguration configuration)
-        //{
-        //    Configuration = configuration;
-        //}
-
-        //public IConfiguration Configuration { get; }
-
-        //// This method gets called by the runtime. Use this method to add services to the container.
-        //public void ConfigureServices(IServiceCollection services)
-        //{
-        //    services.AddMvc();            
-        //    services.AddDbContext<TrainingapiContext>(options => options.UseInMemoryDatabase("test"));
-
-
-        //}
-
-        //public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        //{
-        //    if (env.IsDevelopment())
-        //    {
-        //        app.UseDeveloperExceptionPage();
-        //    }
-
-        //    app.UseMvc();
-        //}
-
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<TrainingapiContext>(optionsBuilder => optionsBuilder.UseInMemoryDatabase("InMemoryDb"));
@@ -70,15 +43,16 @@ namespace Training.Tests.Utils
             var sessionList = repo.GetProductList();
             if (!sessionList.Any())
             {
-                repo.AddProduct(GetTestSession());
+                repo.AddProduct(GetTestSession(1));
+                repo.AddProduct(GetTestSession(2));
             }
         }
 
-        public static Product GetTestSession()
+        public static Product GetTestSession(int id)
         {
             var session = new  Product {
-                ProductId = 1,
-                ProductName = "product 1",
+                ProductId = id,
+                ProductName = $"product {id}",
                 Package = "box"
             };
             

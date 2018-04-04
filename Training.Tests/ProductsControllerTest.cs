@@ -34,7 +34,8 @@ namespace Training.Tests
         public void TestGetBookById()
         {
             var mockRepo = new Mock<IProductSessionRepository>();
-            mockRepo.Setup(repo => repo.GetProductById(1)).Returns(TestStartup.GetTestSession());
+            mockRepo.Setup(repo => repo.GetProductById(1)).Returns(TestStartup.GetTestSession(1));
+            mockRepo.Setup(repo => repo.GetProductById(2)).Returns(TestStartup.GetTestSession(2));
             var controller = new ProductsController(mockRepo.Object);
 
 

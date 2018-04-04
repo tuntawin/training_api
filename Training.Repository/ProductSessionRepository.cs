@@ -16,8 +16,7 @@ namespace Training.Repository
         {
             _context = context;
         }
-
-
+        
         public int AddProduct(Product session)
         {
             _context.Product.Add(session);
