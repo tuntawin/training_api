@@ -9,7 +9,6 @@ script:
 notifications:
   email:
    recipients:
-    - bundit@mycostech.com
     - teerapong@mycostech.com
    on_sucess: always
    on_failure: always
