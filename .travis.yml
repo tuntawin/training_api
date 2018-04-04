@@ -3,13 +3,13 @@ mono: none
 solution: Training.sln
 dotnet: 2.0.0
 script:
-    - dotnet restore
-    - dotnet build
-    - dotnet test Traning.Tests/Training.Tests.csproj
+ - dotnet restore
+ - dotnet build
+ - dotnet test Traning.Tests/Training.Tests.csproj
 notification:
-   email:
-     recipients:
-       - bundit@mycostech.com
-       - teerapong@mycostech.com
-     on_sucess: always
-     on_failure: always
+  email:
+   recipients:
+    - bundit@mycostech.com
+    - teerapong@mycostech.com
+   on_sucess: always
+   on_failure: always
