@@ -40,8 +40,8 @@ namespace Training.Tests
 
 
 
-            string expectedName = "product 1";
-            var result = controller.GetProduct(1);
+            string expectedName = "product 2";
+            var result = controller.GetProduct(2);
 
             // Assert
             var okResult = Assert.IsType<OkObjectResult>(result);
