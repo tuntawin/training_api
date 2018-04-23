@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Training.Repository.Interfaces;
+using Training.Repository;
 
 namespace Training.API
 {
@@ -23,6 +25,8 @@ namespace Training.API
 
             var connection = Configuration.GetConnectionString("ConnectionString");
             services.AddDbContext<TrainingapiContext>(options => options.UseSqlServer(connection));
+
+            services.AddScoped<IProductSessionRepository, ProductSessionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
